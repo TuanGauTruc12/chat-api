@@ -15,7 +15,7 @@ export const uploadFile = async (req, res) => {
   if (!req.file) {
     return res.status(404).json("File not found!");
   }
-  const imageUrl = `https://chat-api-inky.vercel.app/file/${req.file.filename}`;
+  const imageUrl = `https://chat-api-navy.vercel.app/file/${req.file.filename}`;
   return res.status(200).json(imageUrl);
 };
 

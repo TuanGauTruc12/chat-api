@@ -18,11 +18,6 @@ app.get("/", function (req, res) {
   res.json({ message: `hello everyone from chat for me!!` });
 });
 
-app.use((req, res, next) => {
-  req.setTimeout(120000);
-  next();
-});
-
 app.use("/api", routes);
 
 app.listen(PORT, () => {
