@@ -18,6 +18,7 @@ app.use((req, res, next) => {
     res.header('Access-Control-Allow-Methods', 'PUT, GET, POST, DELETE, OPTIONS')
     next()
 })
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
