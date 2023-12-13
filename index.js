@@ -11,6 +11,13 @@ const PORT = process.env.PORT || 4000;
 
 const app = express();
 app.use(cors());
+app.use((req: Request, res: Response, next: NextFunction) => {
+    res.header('Access-Control-Allow-Origin', '*')
+    res.header('Access-Control-Allow-Headers', 'X-Requested-With')
+    res.header('Access-Control-Allow-Headers', 'Content-Type')
+    res.header('Access-Control-Allow-Methods', 'PUT, GET, POST, DELETE, OPTIONS')
+    next()
+})
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
